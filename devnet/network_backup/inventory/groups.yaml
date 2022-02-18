@@ -1,0 +1,24 @@
+cisco_ios:
+    platform: cisco_ios # 完全是netmiko的device_type
+    data:
+        csr_user_list:
+            - { username: qytadmin, privilege: 15, secret: Cisco123 }
+            - { username: pptadmin, privilege: 1, secret: Cisco123 }
+        csr_syslog_hosts:
+            - host: "192.168.19.3"
+        csr_syslog_level:
+            - { dest: console, level: notifications }
+        csr_domain_name:
+            - csr_domain: "qyt.ansible"
+        csr_name_servers:
+            - csr_dns: "1.1.1.1 8.8.8.8"
+
+cisco_asa:
+#    platform: cisco_asa
+    platform: cisco_asa
+
+huawei:
+    platform: huawei
+
+fortios:
+    platform: fortinet

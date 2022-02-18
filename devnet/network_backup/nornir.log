@@ -1,0 +1,6 @@
+2021-09-27 01:42:23,202 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-27 01:42:24,009 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts
+2021-09-27 01:42:24,614 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-configuration '} on 1 hosts
+2021-09-27 07:31:09,526 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-27 07:31:10,433 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts
+2021-09-27 07:31:11,049 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-configuration '} on 1 hosts

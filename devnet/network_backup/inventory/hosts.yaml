@@ -1,0 +1,126 @@
+csr1:
+    groups:
+        - cisco_ios
+    hostname: 192.168.19.206
+    data:
+        site: beijing
+        type: router
+        router_id: 1.1.1.1
+        ospf_process_id: 1
+        interface_list:
+            -   interface_name: Loopback0
+                ipaddr: 1.1.1.1
+                netmask: 255.255.255.255
+            -   interface_name: GigabitEthernet2
+                ipaddr: 10.255.201.3
+                netmask: 255.255.255.0
+            -   interface_name: GigabitEthernet3
+                ipaddr: 10.255.202.3
+                netmask: 255.255.255.0
+        ospf_network_list:
+            -   network: 10.255.201.0
+                wildmask: 0.0.0.255
+                area: 0
+            -   network: 10.255.202.0
+                wildmask: 0.0.0.255
+                area: 0
+
+csr2:
+    groups:
+        - cisco_ios
+    hostname: 192.168.19.209
+    data:
+        site: shanghai
+        type: router
+        router_id: 2.2.2.2
+        ospf_process_id: 1
+        interface_list:
+            -   interface_name: Loopback0
+                ipaddr: 2.2.2.2
+                netmask: 255.255.255.255
+            -   interface_name: GigabitEthernet2
+                ipaddr: 10.255.201.4
+                netmask: 255.255.255.0
+            -   interface_name: GigabitEthernet3
+                ipaddr: 10.255.202.4
+                netmask: 255.255.255.0
+        ospf_network_list:
+            -   network: 10.255.201.0
+                wildmask: 0.0.0.255
+                area: 0
+            -   network: 10.255.202.0
+                wildmask: 0.0.0.255
+                area: 0
+
+
+mct-sw2:
+
+    groups:
+        - huawei
+    hostname: 192.168.19.254
+    data:
+        site: mct
+        type: switch
+
+mct-fg:
+
+    groups:
+        - fortios
+    hostname: 192.168.16.1
+    data:
+        site: mct
+        type: fortigate
+
+
+asa1:
+    groups:
+        - cisco_asa
+    hostname: 192.168.19.211
+    username: cisco
+    password: cisco
+    connection_options: #  不同的connection_type相关的参数(与netmiko参数相同)，例如:cisco_asa的secret
+        netmiko:
+            extras:
+                secret: #
+    data:
+        site: pnet-lab
+        type: firewall
+#
+#        interface_list:
+#            -   interface_name: GigabitEthernet0/1
+#                ipaddr: 10.1.1.254
+#                netmask: 255.255.255.0
+#                nameif: Inside
+#                security_lvl: 100
+#        route_list:
+#            -   dest: 0.0.0.0 0.0.0.0
+#                next_hop: 202.100.1.1
+#                output_if: Outside
+#        object_list:
+#            -   name: Apache
+#                obj_type: network
+#                network_type: host
+#                network_value: 10.1.1.100
+#                protocol: tcp
+#                src_port: 80
+#                dst_port: 80
+#                src_if: Inside
+#                dst_if: Outside
+#                nated_address: 202.100.1.100
+#        snmp_location: BJQYT
+#        snmp_contact: cq_bomb
+#        snmp_ro_community: qytangro
+#        snmp_server_list:
+#            -   output_if: MGMT
+#                snmp_server: 192.168.1.100
+#                community: qytangro
+#                version: 2c
+#            -   output_if: MGMT
+#                snmp_server: 192.168.1.200
+#                community: qytangro
+#                version: 2c
+#        logging_enable: true
+#        logging_trap: debugging
+#        logging_host_list:
+#            -   output_if: MGMT
+#                syslog_server: 192.168.1.100
