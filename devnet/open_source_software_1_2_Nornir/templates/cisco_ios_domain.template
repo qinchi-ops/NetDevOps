@@ -1,0 +1,3 @@
+{% for d in host.csr_domain_name %}
+  ip domain name  {{ d.csr_domain }}
+{% endfor %}

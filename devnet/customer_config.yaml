@@ -1,0 +1,32 @@
+
+csr_ifs:
+- {ip: 10.255.201.3/24, port: GigabitEthernet2, router: 192.168.19.206}
+- {ip: 10.255.202.3/24, port: GigabitEthernet3, router: 192.168.19.206}
+- {ip: 10.255.201.4/24, port: GigabitEthernet2, router: 192.168.19.209}
+- {ip: 10.255.202.4/24, port: GigabitEthernet3, router: 192.168.19.209}
+
+csr_ospf_nets:
+- {area: 0, mask: 0.0.0.255, network: 10.255.201.0, router: 192.168.19.206}
+- {area: 0, mask: 0.0.0.255, network: 10.255.202.0, router: 192.168.19.206}
+- {area: 0, mask: 0.0.0.255, network: 10.255.201.0, router: 192.168.19.209}
+- {area: 0, mask: 0.0.0.255, network: 10.255.202.0, router: 192.168.19.209}
+
+csr_ospf_router_id:
+- {router: 192.168.19.206, routerid: 1.1.1.1}
+- {router: 192.168.19.209, routerid: 2.2.2.2}
+
+csr_domain_name:
+- csr_domain: "qyt.ansible"
+
+#csr_name_servers:
+#- csr_dns: "1.1.1.1 8.8.8.8"
+
+csr_syslog_level:
+- {dest: console, level: notifications}
+
+csr_syslog_hosts:
+- host: 192.168.19.3
+
+csr_user_db:
+- {username: qytadmin, privilege: 15, secret: Cisco123}
+- {username: pptadmin, privilege: 1, secret: Cisco123}

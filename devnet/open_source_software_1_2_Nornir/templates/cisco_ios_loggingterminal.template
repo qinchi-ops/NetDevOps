@@ -1,0 +1,3 @@
+{% for l in host.csr_syslog_level %}
+  logging {{ l.dest }} {{ l.level }}
+{% endfor %}

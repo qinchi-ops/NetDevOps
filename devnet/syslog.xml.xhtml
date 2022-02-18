@@ -1,0 +1,17 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+        <logging>
+          <trap>
+            <severity>7</severity>
+          </trap>
+          <hostip>192.168.19.3</hostip>
+        </logging>
+      </native>
+    </config>
+  </edit-config>
+</rpc>

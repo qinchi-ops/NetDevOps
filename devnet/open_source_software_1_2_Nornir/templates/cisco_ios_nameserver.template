@@ -1,0 +1,3 @@
+{% for n in host.csr_name_servers %}
+  ip name-server {{ n.csr_dns }}
+{% endfor %}

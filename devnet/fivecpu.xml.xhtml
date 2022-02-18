@@ -1,0 +1,11 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
+  <get>
+    <filter>
+      <cpu-usage xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-process-cpu-oper">
+        <cpu-utilization>
+          <five-seconds/>
+        </cpu-utilization>
+      </cpu-usage>
+    </filter>
+  </get>
+</rpc>

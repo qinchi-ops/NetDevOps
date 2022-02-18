@@ -1,0 +1,14 @@
+======================================dingding=====================================
+name: qytang_dingding
+
+url:
+https://oapi.dingtalk.com/robot/send?access_token=9f76167ddd28ad60eca198461ba187c6a5aa64a9b54dcb15d3a61b37f08de917
+
+注意:我已经设置了允许的IP(QYTANG北京公网IP)
+======================================email=====================================
+name: qytang_email
+
+Addresses:
+collinsctk@qytang.com
+
+注意: 我已经在grafana.ini的[smtp]段落配置了SMTP服务器和认证信息

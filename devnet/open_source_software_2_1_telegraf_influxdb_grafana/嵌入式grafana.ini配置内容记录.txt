@@ -1,0 +1,6 @@
+cookie_samesite = disabled
+allow_embedding = true
+[auth.anonymous]
+enabled = true
+org_name = Qytang
+org_role = Viewer

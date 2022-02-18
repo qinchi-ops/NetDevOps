@@ -1,0 +1,80 @@
+---
+- hosts: CSR  # playbook操作的设备
+  gather_facts: false  # 并不搜集这些主机的信息
+  connection: local  # 本地发起连接
+  vars_files:
+    - customer_config.yaml  # 导入配置信息文件
+
+  tasks:  # 开始任务
+    - name: config csrs interfaces  # 任务名字
+      ios_l3_interfaces:  # 模块名字
+        config:
+          - name: "{{ item.port }}"  # 配置接口名字
+            ipv4:
+            - address: "{{ item.ip }}"  # 配置接口IP地址
+      with_items: "{{ csr_ifs }}"  # 导入csr_ifs这个部分的配置内容
+      when: (item.router == inventory_hostname)  # 条件判断，当IP地址等于router的IP
+
+    - name: up csrs interfaces  # 任务名字
+      ios_interfaces:  # 模块名字
+        config:
+          - name: "{{ item.port }}"  # 配置接口名字
+            enabled: True  # no shutdown
+      with_items: "{{ csr_ifs }}"  # 导入csr_ifs这个部分的配置内容
+      when: (item.router == inventory_hostname)  # 条件判断，当IP地址等于router的IP
+
+    - name: csrs ospf network   # 任务名字
+      ios_config:  # 模块名字
+        lines:
+          - network {{ item.network }} {{ item.mask }} area {{ item.area }}  # 网络宣告
+        parents: router ospf 1  # 通过配置router ospf 1 进入router配置模式
+      with_items: "{{ csr_ospf_nets }}"  # 导入csr_ospf_nets这个部分的配置内容
+      when: (item.router == inventory_hostname)  # 条件判断，当IP地址等于router的IP
+
+    - name: csrs ospf router-id  # 任务名字
+      ios_config:  # 模块名字
+        lines:
+          - router-id {{ item.routerid }}  # 在router配置模式,配置路由器ospf的router-id
+        parents: router ospf 1  # 通过配置router ospf 1 进入router配置模式
+      with_items: "{{ csr_ospf_router_id }}"  # 导入csr_ospf_router_id这个部分的配置内容
+      when: (item.router == inventory_hostname)  # 条件判断，当IP地址等于router的IP
+
+    - name: SAVE CSRS CONFIG  # 任务名字
+      ios_config:  # 模块名字
+        backup: yes  # 是否备份
+        save_when: modified  # 当配置修改就保存配置
+
+    - name: Add a user specifying password type
+      ios_user:
+        name: "{{ item.username }}"
+        configured_password: "{{ item.secret }}"
+        password_type: secret
+        privilege: "{{ item.privilege }}"
+        state: present
+      with_items: "{{ csr_user_db }}"  # 导入csr_user_db这个部分的配置内容
+
+    - name: configure hostname and domain name
+      ios_system:
+        domain_name: "{{ item.csr_domain}}"
+      with_items: "{{ csr_domain_name }}"  # 导入csr_domain_name这个部分的配置内容
+
+    - name: configure name servers
+      ios_system:
+        name_servers:
+          - 8.8.8.8
+          - 1.1.1.1
+
+    - name: configure host logging
+      ios_logging:
+        dest: host
+        name: "{{ item.host}}"
+        state: present
+      with_items: "{{ csr_syslog_hosts }}"  # 导入csr_syslog_hosts这个部分的配置内容
+
+    - name: Configure logging using aggregate
+      ios_logging:
+        aggregate:
+          - { dest: "{{ item.dest }}", level: "{{ item.level }}" }
+      with_items: "{{ csr_syslog_level }}"  # 导入csr_syslog_level这个部分的配置内容
+
+...

@@ -1,0 +1,19 @@
+---
+- hosts: CSR1  # playbook操作的设备
+  gather_facts: false  # 并不搜集这些主机的信息
+  connection: local  # 本地发起连接
+
+  tasks:  # 开始任务
+    - name: config csrs interfaces  # 任务名字
+      ios_l3_interfaces:  # 模块名字
+        config:
+          - name: loopback0   # 配置接口名字
+            ipv4:
+            - address: 1.1.1.1/24  # 配置接口IP地址
+    - name: 打开接口
+      ios_interfaces:
+        config:
+          - name: loopback0
+            description: 'ansible test'
+            enabled: True
+...

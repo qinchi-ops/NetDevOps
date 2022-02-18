@@ -1,0 +1,1047 @@
+2021-09-09 03:31:29,383 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip int br'} on 2 hosts
+2021-09-09 03:32:16,432 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip int br'} on 2 hosts
+2021-09-09 03:32:46,038 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip int br'} on 2 hosts
+2021-09-09 03:33:40,338 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip int br'} on 2 hosts
+2021-09-09 03:33:56,107 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-09 05:12:46,218 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:12:47,160 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '第三步.1:读取路由器username模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_username.template", line 1, in top-level template code
+    {% for u in host.username_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'username_list'
+
+2021-09-09 05:12:47,161 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 111, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第三步.1:读取路由器username模板 (failed)
+
+
+2021-09-09 05:12:49,137 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '第三步.1:读取路由器username模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_username.template", line 1, in top-level template code
+    {% for u in host.username_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'username_list'
+
+2021-09-09 05:12:49,137 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 111, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第三步.1:读取路由器username模板 (failed)
+
+
+2021-09-09 05:14:54,136 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:14:54,146 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '第三步.1:读取路由器username模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_username.template", line 2, in top-level template code
+    username {{ u.username }} privilege {{ u.privilege }} secret {{ u.password }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'password'
+
+2021-09-09 05:14:54,147 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 111, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第三步.1:读取路由器username模板 (failed)
+
+
+2021-09-09 05:14:54,150 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '第三步.1:读取路由器username模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_username.template", line 2, in top-level template code
+    username {{ u.username }} privilege {{ u.privilege }} secret {{ u.password }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'password'
+
+2021-09-09 05:14:54,150 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 111, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第三步.1:读取路由器username模板 (failed)
+
+
+2021-09-09 05:15:36,088 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:27:11,170 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:29:47,083 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:36:07,337 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:36:07,345 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '第六步.1:读取路由器logginghost模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_logginghost.template", line 1, in top-level template code
+    {% for h in csr_syslog_hosts %}
+jinja2.exceptions.UndefinedError: 'csr_syslog_hosts' is undefined
+
+2021-09-09 05:36:07,346 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 152, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第六步.1:读取路由器logginghost模板 (failed)
+
+
+2021-09-09 05:36:07,349 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '第六步.1:读取路由器logginghost模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_logginghost.template", line 1, in top-level template code
+    {% for h in csr_syslog_hosts %}
+jinja2.exceptions.UndefinedError: 'csr_syslog_hosts' is undefined
+
+2021-09-09 05:36:07,349 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 152, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第六步.1:读取路由器logginghost模板 (failed)
+
+
+2021-09-09 05:38:35,861 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:38:35,870 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '第六步.1:读取路由器logginghost模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_logginghost.template", line 1, in top-level template code
+    {% for h in csr_syslog_hosts %}
+jinja2.exceptions.UndefinedError: 'csr_syslog_hosts' is undefined
+
+2021-09-09 05:38:35,870 - nornir.core.task -    ERROR -      start() - Host 'csr1': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 152, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第六步.1:读取路由器logginghost模板 (failed)
+
+
+2021-09-09 05:38:35,873 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '第六步.1:读取路由器logginghost模板' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "./templates/cisco_ios_logginghost.template", line 1, in top-level template code
+    {% for h in csr_syslog_hosts %}
+jinja2.exceptions.UndefinedError: 'csr_syslog_hosts' is undefined
+
+2021-09-09 05:38:35,873 - nornir.core.task -    ERROR -      start() - Host 'csr2': task '配置路由器' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 152, in config_routers
+    path=templates_path
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第六步.1:读取路由器logginghost模板 (failed)
+
+
+2021-09-09 05:39:25,563 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:39:37,273 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:39:59,231 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 05:44:44,867 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-09 21:58:41,566 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-09 21:59:28,820 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-09 21:59:29,554 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-10 02:42:05,150 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:42:05,944 -  nornir.core -     INFO -        run() - Running task '配置路由器' with args {} on 2 hosts
+2021-09-10 02:54:51,958 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:55:39,522 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:56:00,638 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:56:34,018 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:57:18,512 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:57:41,687 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 02:58:15,185 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 03:01:18,310 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 03:03:26,292 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 05:01:43,774 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 05:03:56,642 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-10 05:04:28,862 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-12 08:04:13,007 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-12 08:06:02,630 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-12 08:06:32,532 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 2 hosts
+2021-09-14 22:17:30,029 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'display  current-configuration'} on 1 hosts
+2021-09-14 22:17:32,506 - nornir.core.task -    ERROR -      start() - Host 'mct-sw2': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 764, in _auth
+    raise saved_exception
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 751, in _auth
+    self._transport.auth_password(username, password)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1509, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 972, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.ssh_exception.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: huawei 192.168.19.206:22
+
+
+Authentication failed.
+
+2021-09-14 22:18:36,041 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'display  current-configuration'} on 1 hosts
+2021-09-14 22:18:38,483 - nornir.core.task -    ERROR -      start() - Host 'mct-sw2': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 764, in _auth
+    raise saved_exception
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 751, in _auth
+    self._transport.auth_password(username, password)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1509, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 972, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.ssh_exception.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: huawei 192.168.19.206:22
+
+
+Authentication failed.
+
+2021-09-14 22:22:00,666 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'display  current-configuration'} on 1 hosts
+2021-09-14 22:36:24,627 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'display  current-configuration'} on 1 hosts
+2021-09-15 02:13:16,912 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show firewall policy'} on 1 hosts
+2021-09-15 02:13:16,915 - nornir.core.task -    ERROR -      start() - Host 'mct-fg': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 323, in ConnectHandler
+    "currently supported platforms are: {}".format(msg_str)
+ValueError: Unsupported 'device_type' currently supported platforms are: 
+a10
+accedian
+adtran_os
+alcatel_aos
+alcatel_sros
+allied_telesis_awplus
+apresia_aeos
+arista_eos
+aruba_os
+aruba_osswitch
+aruba_procurve
+avaya_ers
+avaya_vsp
+broadcom_icos
+brocade_fastiron
+brocade_fos
+brocade_netiron
+brocade_nos
+brocade_vdx
+brocade_vyos
+calix_b6
+cdot_cros
+centec_os
+checkpoint_gaia
+ciena_saos
+cisco_asa
+cisco_ftd
+cisco_ios
+cisco_nxos
+cisco_s300
+cisco_tp
+cisco_wlc
+cisco_xe
+cisco_xr
+cloudgenix_ion
+coriant
+dell_dnos9
+dell_force10
+dell_isilon
+dell_os10
+dell_os6
+dell_os9
+dell_powerconnect
+dlink_ds
+eltex
+eltex_esr
+endace
+enterasys
+ericsson_ipos
+extreme
+extreme_ers
+extreme_exos
+extreme_netiron
+extreme_nos
+extreme_slx
+extreme_vdx
+extreme_vsp
+extreme_wing
+f5_linux
+f5_ltm
+f5_tmsh
+flexvnf
+fortinet
+generic
+generic_termserver
+hp_comware
+hp_procurve
+huawei
+huawei_olt
+huawei_smartax
+huawei_vrpv8
+ipinfusion_ocnos
+juniper
+juniper_junos
+juniper_screenos
+keymile
+keymile_nos
+linux
+mellanox
+mellanox_mlnxos
+mikrotik_routeros
+mikrotik_switchos
+mrv_lx
+mrv_optiswitch
+netapp_cdot
+netgear_prosafe
+netscaler
+nokia_sros
+oneaccess_oneos
+ovs_linux
+paloalto_panos
+pluribus
+quanta_mesh
+rad_etx
+raisecom_roap
+ruckus_fastiron
+ruijie_os
+sixwind_os
+sophos_sfos
+supermicro_smis
+tplink_jetstream
+ubiquiti_edge
+ubiquiti_edgerouter
+ubiquiti_edgeswitch
+ubiquiti_unifiswitch
+vyatta_vyos
+vyos
+watchguard_fireware
+yamaha
+zte_zxros
+
+2021-09-15 02:14:19,113 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show firewall policy'} on 1 hosts
+2021-09-15 02:16:14,727 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 02:28:07,762 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 02:30:47,294 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 02:33:58,881 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 02:56:44,443 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 03:20:49,670 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 03:42:13,181 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show full-conf'} on 1 hosts
+2021-09-15 03:58:49,793 -  nornir.core -  WARNING -        run() - Task 'Nornir执行Show命令' has not been run – 0 hosts selected
+2021-09-15 03:59:23,721 -  nornir.core -  WARNING -        run() - Task 'Nornir执行Show命令' has not been run – 0 hosts selected
+2021-09-15 04:04:37,966 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 04:04:38,187 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 04:05:14,936 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 04:05:15,027 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 04:42:04,344 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 04:42:04,452 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 04:48:39,058 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 04:48:39,158 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 05:00:29,824 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 05:00:29,946 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 05:01:35,343 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 05:01:35,437 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 05:05:07,620 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 05:05:07,722 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 05:07:46,784 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 05:07:46,786 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 323, in ConnectHandler
+    "currently supported platforms are: {}".format(msg_str)
+ValueError: Unsupported 'device_type' currently supported platforms are: 
+a10
+accedian
+adtran_os
+alcatel_aos
+alcatel_sros
+allied_telesis_awplus
+apresia_aeos
+arista_eos
+aruba_os
+aruba_osswitch
+aruba_procurve
+avaya_ers
+avaya_vsp
+broadcom_icos
+brocade_fastiron
+brocade_fos
+brocade_netiron
+brocade_nos
+brocade_vdx
+brocade_vyos
+calix_b6
+cdot_cros
+centec_os
+checkpoint_gaia
+ciena_saos
+cisco_asa
+cisco_ftd
+cisco_ios
+cisco_nxos
+cisco_s300
+cisco_tp
+cisco_wlc
+cisco_xe
+cisco_xr
+cloudgenix_ion
+coriant
+dell_dnos9
+dell_force10
+dell_isilon
+dell_os10
+dell_os6
+dell_os9
+dell_powerconnect
+dlink_ds
+eltex
+eltex_esr
+endace
+enterasys
+ericsson_ipos
+extreme
+extreme_ers
+extreme_exos
+extreme_netiron
+extreme_nos
+extreme_slx
+extreme_vdx
+extreme_vsp
+extreme_wing
+f5_linux
+f5_ltm
+f5_tmsh
+flexvnf
+fortinet
+generic
+generic_termserver
+hp_comware
+hp_procurve
+huawei
+huawei_olt
+huawei_smartax
+huawei_vrpv8
+ipinfusion_ocnos
+juniper
+juniper_junos
+juniper_screenos
+keymile
+keymile_nos
+linux
+mellanox
+mellanox_mlnxos
+mikrotik_routeros
+mikrotik_switchos
+mrv_lx
+mrv_optiswitch
+netapp_cdot
+netgear_prosafe
+netscaler
+nokia_sros
+oneaccess_oneos
+ovs_linux
+paloalto_panos
+pluribus
+quanta_mesh
+rad_etx
+raisecom_roap
+ruckus_fastiron
+ruijie_os
+sixwind_os
+sophos_sfos
+supermicro_smis
+tplink_jetstream
+ubiquiti_edge
+ubiquiti_edgerouter
+ubiquiti_edgeswitch
+ubiquiti_unifiswitch
+vyatta_vyos
+vyos
+watchguard_fireware
+yamaha
+zte_zxros
+
+2021-09-15 05:08:17,951 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 05:08:18,089 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 05:13:59,567 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run'} on 1 hosts
+2021-09-15 05:13:59,667 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 05:39:27,448 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts
+2021-09-15 05:39:27,570 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 06:10:09,014 -  nornir.core -     INFO -        run() - Running task '配置ASA防火墙' with args {} on 1 hosts
+2021-09-15 06:10:09,153 - nornir.core.task -    ERROR -      start() - Host 'asa1': task '第一步.2: 配置ASA接口' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 06:10:09,154 - nornir.core.task -    ERROR -      start() - Host 'asa1': task '配置ASA防火墙' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 230, in config_asas
+    cmd_verify=True)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第一步.2: 配置ASA接口 (failed)
+
+
+2021-09-15 06:19:42,039 -  nornir.core -     INFO -        run() - Running task '配置ASA防火墙' with args {} on 1 hosts
+2021-09-15 06:19:42,144 - nornir.core.task -    ERROR -      start() - Host 'asa1': task '第一步.2: 配置ASA接口' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/usr/local/lib/python3.6/site-packages/paramiko/client.py", line 765, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2021-09-15 06:19:42,145 - nornir.core.task -    ERROR -      start() - Host 'asa1': task '配置ASA防火墙' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/devnet/open_source_software_1_2_Nornir/nornir_final_task.py", line 230, in config_asas
+    cmd_verify=True)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 第一步.2: 配置ASA接口 (failed)
+
+
+2021-09-15 06:24:49,549 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip address', 'enable': True} on 1 hosts
+2021-09-15 06:25:11,708 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts
+2021-09-15 06:26:23,755 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts
+2021-09-15 06:26:26,127 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 356, in _open
+    self._try_session_preparation()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 792, in _try_session_preparation
+    self.session_preparation()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 28, in session_preparation
+    self.enable()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 56, in enable
+    cmd=cmd, pattern=pattern, enable_pattern=enable_pattern, re_flags=re_flags
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco_base_connection.py", line 25, in enable
+    cmd=cmd, pattern=pattern, enable_pattern=enable_pattern, re_flags=re_flags
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1699, in enable
+    self.write_channel(self.normalize_cmd(self.secret))
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1644, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'dict' object has no attribute 'rstrip'
+
+2021-09-15 06:27:04,664 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip address', 'enable': True} on 1 hosts
+2021-09-15 06:27:07,047 - nornir.core.task -    ERROR -      start() - Host 'asa1': task 'Nornir执行Show命令' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 15, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 356, in _open
+    self._try_session_preparation()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 792, in _try_session_preparation
+    self.session_preparation()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 28, in session_preparation
+    self.enable()
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco/cisco_asa_ssh.py", line 56, in enable
+    cmd=cmd, pattern=pattern, enable_pattern=enable_pattern, re_flags=re_flags
+  File "/usr/local/lib/python3.6/site-packages/netmiko/cisco_base_connection.py", line 25, in enable
+    cmd=cmd, pattern=pattern, enable_pattern=enable_pattern, re_flags=re_flags
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1699, in enable
+    self.write_channel(self.normalize_cmd(self.secret))
+  File "/usr/local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1644, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'dict' object has no attribute 'rstrip'
+
+2021-09-15 06:27:35,706 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show ip address', 'enable': True} on 1 hosts
+2021-09-15 06:31:27,417 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts
+2021-09-15 06:32:10,393 -  nornir.core -     INFO -        run() - Running task 'Nornir执行Show命令' with args {'command_string': 'show run', 'enable': True} on 1 hosts

@@ -1,0 +1,3 @@
+{% for u in host.csr_user_list %}
+  username {{ u.username }} privilege {{ u.privilege }} secret {{ u.secret }}
+{% endfor %}
