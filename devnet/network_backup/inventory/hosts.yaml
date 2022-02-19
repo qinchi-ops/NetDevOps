@@ -53,22 +53,22 @@ csr2:
                 area: 0
 
 
-mct-sw2:
+sg-sw2:
 
     groups:
         - huawei
     hostname: 192.168.19.254
     data:
-        site: mct
+        site: sg
         type: switch
 
-mct-fg:
+sg-fg:
 
     groups:
         - fortios
     hostname: 192.168.16.1
     data:
-        site: mct
+        site: sg
         type: fortigate
 
 

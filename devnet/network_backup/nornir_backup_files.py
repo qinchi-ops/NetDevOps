@@ -192,7 +192,7 @@ def fortigates_config():
                     fp.write(line)
 
 
-# print(netmiko_show_result['mct-fg'].result)
+
 # print(netmiko_show_result['csr2'].result)
 # 打印返回结果
 # for i in netmiko_show_result:
